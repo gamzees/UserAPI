@@ -1,17 +1,29 @@
 package methods;
 
+import base.BaseTest;
 import entity.user.LoginResponse;
 import entity.user.User;
 import entity.user.UserResponse;
+import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.json.simple.JSONObject;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import utility.log;
 import static data.BaseData.USER_BASE_URL;
 import static io.restassured.RestAssured.given;
+
 public class UserMethods {
+
+    Response response;
+
+    public UserMethods() {
+
+    }
+
     public Response createdUser(User user) {
+
 
         JSONObject requestParams = new JSONObject();
         requestParams.put("id", user.getId());
@@ -22,6 +34,7 @@ public class UserMethods {
         requestParams.put("password", user.getPassword());
         requestParams.put("phone", user.getPhone());
         requestParams.put("userStatus", user.getUserStatus());
+
 
         log.info("userRequest json: " + requestParams.toJSONString());
 
