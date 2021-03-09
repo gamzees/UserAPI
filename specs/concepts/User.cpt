@@ -1,0 +1,8 @@
+#Kisi Bilgilerini Olustur
+*"id" bilgisi gir
+*"name" bilgisi gir
+*"surname" bilgisi gir
+*"email" bilgisi gir
+*"password" bilgisi gir
+*"phone" bilgisi gir
+*"userStatus" bilgisi gir
