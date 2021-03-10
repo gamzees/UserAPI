@@ -18,7 +18,7 @@ import org.slf4j.LoggerFactory;
 import static data.BaseData.USER_BASE_URL;
 import static io.restassured.RestAssured.given;
 
-public class UserMethods {
+public class Methods {
 
     Response response;
 
@@ -26,7 +26,7 @@ public class UserMethods {
     private RequestSpecification request = RestAssured.given().contentType(ContentType.JSON);
     private Gson gson = new Gson();
 
-    public UserMethods() {
+    public Methods() {
 
     }
     public Response createdUser(User user) {
@@ -55,7 +55,7 @@ public class UserMethods {
     public Response getUser(User user) {
 
         Response response = request.contentType(ContentType.JSON).get(USER_BASE_URL + user.getUsername());
-        logger.info("Response statu code : " + response.getStatusCode());
+        logger.info("Response status code : " + response.getStatusCode());
 
         String responseBody = response.body().asString();
 
