@@ -2,7 +2,6 @@ package helper;
 
 import com.google.common.io.Resources;
 import org.json.JSONObject;
-
 import java.io.IOException;
 import java.net.URL;
 import java.nio.charset.Charset;

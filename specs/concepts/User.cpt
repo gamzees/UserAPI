@@ -1,3 +1,8 @@
-#Kisi Bilgilerini Olustur
-*User bilgisi olustur
-*Get User login
+#<Parameter> paramatersini <Value> değerini ekle
+*<Parameter> paramatersini <Value> değerini ile json olarak ekle
+
+#<Parameter> parametresini <Value> karsilasmasini yap
+*<Parameter> parametresini <Value> değeri ile karsilastir.
+
+#<Method> http methodunu sec ve gerceklestir.
+*<Post|Put|Get|Delete> methodunu gerceklestir.

@@ -2,7 +2,8 @@ Kullanici API Test Adimlari
 ===========================
 
      
-User Olusturma
+User Api Test
 ----------------
-*Kisi Bilgilerini Olustur
-
+*"Id" paramatersini "1" değerini ekle
+*"GET" http methodunu sec ve gerceklestir.
+*"Id" parametresini "2" karsilasmasini yap
