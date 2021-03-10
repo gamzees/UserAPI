@@ -15,7 +15,6 @@ public class BaseData {
     public RequestSpecification requestSpecification;
     private Response response;
     public JSONObject requestBody;
-    private String endpoint;
 
     @BeforeMethod
     public void BeforeMethod(){
@@ -24,7 +23,6 @@ public class BaseData {
 
     public void startWebServices(String jsonFile,String endpoint) throws IOException {
         requestBody = Helper.readJson(jsonFile);
-        this.endpoint = endpoint;
     }
 }
 
