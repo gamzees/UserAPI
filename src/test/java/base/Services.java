@@ -1,4 +1,4 @@
-package data;
+package base;
 
 import helper.Helper;
 import io.restassured.RestAssured;
@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeMethod;
 
 import java.io.IOException;
 
-public class BaseData {
+public class Service {
     public static final String USER_BASE_URL = "https://petstore.swagger.io/v2/user/";
     public RequestSpecification requestSpecification;
     private Response response;
