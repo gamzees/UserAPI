@@ -51,6 +51,9 @@ public class Methods {
 
         return response;
     }
+    public void requestSpecBuilder(){
+
+    }
 
     public Response getUser(User user) {
 
