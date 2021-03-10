@@ -2,7 +2,7 @@ package step;
 
 import com.thoughtworks.gauge.Step;
 import methods.Methods;
-
+import java.io.IOException;
 public class StepImplementation {
 
 
@@ -11,6 +11,11 @@ public class StepImplementation {
     public StepImplementation() { //constructor
 
         methods = new Methods();
+    }
+
+    @Step("<endpoint> ile <fileName> dosyasini kullanarak servis islemlerini baslat")
+    public void startService(String endpoint, String fileName) throws IOException {
+        methods.startWebService(fileName,endpoint);
     }
 
     @Step("<Post|Put|Get|Delete> methodunu gerceklestir.")
@@ -27,7 +32,6 @@ public class StepImplementation {
     public void assertIt(String parameter, String value){
         methods.asserIt(parameter,value);
     }
-
 }
 
 

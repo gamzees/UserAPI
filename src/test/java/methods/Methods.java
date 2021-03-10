@@ -6,6 +6,7 @@ import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.io.IOException;
 
 public class Methods {
 
@@ -17,6 +18,12 @@ public class Methods {
     public Methods() {
         services = new Services();
     }
+
+    public void startWebService(String fileName, String endpoint) throws IOException {
+
+        services.startWebServices(fileName,endpoint);
+    }
+
 
     public void setRequest(String paramater, String value) {
         services.requestParams.put(paramater, value);
