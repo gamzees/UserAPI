@@ -4,7 +4,7 @@
 #<Parameter> parametresini <Value> karsilasmasini yap
 *<Parameter> parametresini <Value> değeri ile karsilastir.
 
-#<Method> http methodunu sec ve gerceklestir.
+#<Post|Put|Get|Delete> http methodunu sec ve gerceklestir.
 *<Post|Put|Get|Delete> methodunu gerceklestir.
 
 #<endpoint> ile <file> dosyasiyla servisi baslat
