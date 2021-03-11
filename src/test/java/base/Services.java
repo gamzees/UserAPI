@@ -17,17 +17,18 @@ public class Services {
     private Response response;
     public JSONObject requestParams = new JSONObject();
     public JSONObject requestObject = new JSONObject();
-    private String fileDirectoryPath = System.getProperty("user.dir");
+    private static String fileDirectoryPath = System.getProperty("user.dir");
     private String webServiceRequest;
     private String endpoint;
 
 
-    public void startWebServices(String file,String endpoint) throws IOException {
-        String serviceRequest = "";
+
+    public static String readJson(String file) throws IOException {
+
         fileDirectoryPath = "/src/test/resources/" + file + ".json";
-        serviceRequest = new String(Files.readAllBytes(Paths.get(fileDirectoryPath)));
-        webServiceRequest = serviceRequest;
-        this.endpoint = endpoint;
+        String serviceRequest = new String(Files.readAllBytes(Paths.get(fileDirectoryPath)));
+        return serviceRequest;
+
     }
 
     private RequestSpecBuilder requestSpecBuilder() {
@@ -39,6 +40,12 @@ public class Services {
                 .setContentType(ContentType.JSON)
                 .setAccept(ContentType.JSON);
         return reqSpecBuilder;
+    }
+
+    public void startWebServices(String endpoint, String jsonFile) throws IOException {
+        webServiceRequest = readJson(jsonFile);
+        this.endpoint = endpoint;
+        requestSpecBuilder();
     }
 
     public void post() {

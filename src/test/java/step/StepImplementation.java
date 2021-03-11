@@ -13,9 +13,9 @@ public class StepImplementation {
         methods = new Methods();
     }
 
-    @Step("<endpoint> ile <fileName> dosyasini kullanarak servis islemlerini baslat")
-    public void startService(String endpoint, String fileName) throws IOException {
-        methods.startWebService(fileName,endpoint);
+    @Step("<jsonFile> ile <endpoint> dosyasini kullanarak servis islemlerini baslat")
+    public void startService(String jsonFile, String endpoint) throws IOException {
+        methods.startWebService(jsonFile,endpoint);
     }
 
     @Step("<Post|Put|Get|Delete> methodunu gerceklestir.")

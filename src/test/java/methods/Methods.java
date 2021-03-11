@@ -19,9 +19,9 @@ public class Methods {
         services = new Services();
     }
 
-    public void startWebService(String fileName, String endpoint) throws IOException {
+    public void startWebService(String jsonFile, String endpoint) throws IOException {
 
-        services.startWebServices(fileName,endpoint);
+        services.startWebServices(jsonFile,endpoint);
     }
 
 
