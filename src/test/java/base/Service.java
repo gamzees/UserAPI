@@ -4,41 +4,58 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import org.json.JSONArray;
 import org.json.JSONObject;
-import org.junit.Test;
-import org.testng.Assert;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
 
 import static io.restassured.RestAssured.given;
 
 public class Service {
 
     private Response response;
+    private RequestSpecification requestSpecification;
+    private JSONObject requestPayload = new JSONObject();
     private String requestBody;
     private String baseURL = "https://petstore.swagger.io/v2/";
     private RequestSpecBuilder reqSpecBuilder;
 
 
-    public void startWebServices(String path) {
+    public void startWebServices(String filePath,String path) {
 
         reqSpecBuilder = new RequestSpecBuilder();
         reqSpecBuilder.setBasePath(path);
     }
 
-    public void requestSpecBuilder(String body){
+    private void requestSpecBuilder(){
 
         //requestBody = requestPayload;
         reqSpecBuilder
                 .setBaseUri(baseURL)
-                .setBody(body)
+                .setBody(requestPayload)
                 .setContentType(ContentType.JSON)
                 .setAccept(ContentType.JSON);
 
+    }
+
+    public void setMethods(String requestType) {
+        requestSpecBuilder();
+
+        switch (requestType) {
+
+            case "GET":
+                get();
+                break;
+            case "POST":
+                post();
+                getResponse().prettyPrint();
+                break;
+            case "PUT":
+                put();
+                getResponse().prettyPrint();
+                break;
+            case "DELETE":
+                delete();
+                break;
+
+        }
     }
 
     public void pathParam(String key, Object value) {

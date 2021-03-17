@@ -28,40 +28,7 @@ public class Methods {
         jsonObject = new JSONObject();
         jsonArray = new JSONArray();
         listObject = new ArrayList<>();
-    }
 
-    public void startWebService(String path, String filePath) {
-
-        fileName = filePath;
-        service.startWebServices(path);
-
-    }
-
-    public void setMethods(String requestType) throws IOException{
-
-        if(!fileName.isEmpty()){
-            service.requestSpecBuilder(getBody(fileName));
-        }else {
-            service.requestSpecBuilder(requestPayload.toString());
-        }
-
-        switch(requestType){
-
-            case "GET":
-                service.get();
-                break;
-            case "POST":
-                service.post();
-                service.getResponse().prettyPrint();
-                break;
-            case "PUT":
-                service.put();
-                break;
-            case "DELETE":
-                service.delete();
-                break;
-
-        }
     }
 
     public void setPathParam(String key, Object value){

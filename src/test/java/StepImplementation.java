@@ -14,17 +14,17 @@ public class StepImplementation {
 
     @Step("<path> endpointi ve <file> json dosyası ile servisi başlat")
     public void startService(String path,String fileName) {
-        methods.startWebService(path,fileName);
+        createRequest.startWebServices(path,fileName);
     }
 
     @Step("<path> endpointi ile servisi başlat")
     public void startService(String path) {
-        methods.startWebService("",path);
+        createRequest.startWebServices("",path);
     }
 
     @Step("<GET|POST|PUT|DELETE> islemi yap")
     public void setHttpMethods(String requestType) throws IOException {
-        methods.setMethods(requestType);
+        createRequest.setMethods(requestType);
     }
 
     @Step("<key> keyi ve <value> degeri ile url pathi ekle")
