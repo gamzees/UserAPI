@@ -1,11 +1,13 @@
-#<Parameter> paramatersini <Value> değerini ekle
-*<Parameter> paramatersini <Value> değerini ile json olarak ekle
+#User createWithArray request body oluştur
+*"id" parameter Int:"1" değeri ile json objesi oluştur
+*"username" parameter String:"ysfbzrl" değeri ile json objesi oluştur
+*"firstName" parameter String:"Yusuf" değeri ile json objesi oluştur
+*"lastName" parameter String:"Buzrul" değeri ile json objesi oluştur
+*"email" parameter String:"yusufbuzrul@gmail.com" değeri ile json objesi oluştur
+*"password" parameter String:"benimsifrem" değeri ile json objesi oluştur
+*"phone" parameter String:"05395716716" değeri ile json objesi oluştur
+*"userStatus" parameter String:"available" değeri ile json objesi oluştur
+*"userbir" parameteri ile Array Objesini oluştur
 
-#<Parameter> parametresini <Value> karsilasmasini yap
-*<Parameter> parametresini <Value> değeri ile karsilastir.
 
-#<Post|Put|Get|Delete> http methodunu sec ve gerceklestir.
-*<Post|Put|Get|Delete> methodunu gerceklestir.
 
-#<endpoint> ile <file> dosyasiyla servisi baslat
-*<endpoint> ile <fileName> dosyasini kullanarak servis islemlerini baslat
